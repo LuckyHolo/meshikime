@@ -1,0 +1,185 @@
+/* ==========================================================================
+   ページ全体の土台レイアウト
+   ========================================================================== */
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f8fafc; /* slate-50 */
+  padding: 2rem 1rem;
+  font-family: sans-serif;
+}
+
+/* ロゴのスタイリング */
+.logo {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #0f172a; /* slate-900 */
+  text-decoration: none;
+  margin-bottom: 2rem;
+  letter-spacing: -0.03em;
+}
+
+.logo span {
+  color: #ea580c; /* アクセントのオレンジ */
+}
+
+/* ==========================================================================
+   メインパネル（カード部分）
+   ========================================================================== */
+.panel {
+  width: 100%;
+  max-width: 440px;
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 
+              0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+}
+
+/* キャッチコピーの上の小文字 */
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b; /* slate-500 */
+  margin-bottom: 0.5rem;
+}
+
+/* メインのH1見出し */
+.panel h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+/* 説明文（リードテキスト） */
+.lead {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   フォーム・入力欄
+   ========================================================================== */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 入力欄のラベル */
+.form label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #334155; /* slate-700 */
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+/* 入力インプット枠 */
+.form input {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  outline: none;
+  margin-bottom: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.form input:focus {
+  border-color: #ea580c; /* フォーカス時にオレンジに */
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
+}
+
+/* エラーメッセージ（バリデーション用） */
+.error {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ef4444; /* red-500 */
+  background-color: #fee2e2;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #fca5a5;
+}
+
+/* 送信ボタン */
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #0f172a; /* slate-900 */
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.submit:hover {
+  background-color: #1e293b;
+}
+
+.submit span {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.submit:hover span {
+  transform: translateX(3px); /* 矢印がシュッと動く演出 */
+}
+
+/* ==========================================================================
+   リンク・導線
+   ========================================================================== */
+/* 💡 新規追加：ログイン画面への案内リンク */
+.switchLink {
+  font-size: 0.85rem;
+  color: #64748b;
+  text-align: center;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.switchLink a {
+  color: #ea580c;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.switchLink a:hover {
+  text-decoration: underline;
+}
+
+/* ホームへ戻るリンク */
+.back {
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.back a {
+  color: #94a3b8; /* slate-400 */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back a:hover {
+  color: #64748b;
+  text-decoration: underline;
+}

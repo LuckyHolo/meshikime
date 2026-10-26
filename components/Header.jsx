@@ -34,7 +34,7 @@ function Header() {
 
   return (
     <header className={styles.header}>
-      <Link href="#hero-title" className={styles.logo} aria-label="meshitaku ホーム">
+      <Link href="/" className={styles.logo} aria-label="meshitaku ホーム">
         <span className={styles.logo__mark}>m</span>
         <span className={styles.logo__name}>meshitaku<span>.</span></span>
       </Link>
