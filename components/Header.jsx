@@ -1,4 +1,4 @@
-"use client"; // 状態（useState）を扱うため記述
+"use client";
 
 import { useSyncExternalStore } from "react";
 import Link from "next/link";
@@ -29,21 +29,24 @@ function Header() {
         localStorage.removeItem(AUTH_STORAGE_KEY);
         window.dispatchEvent(new Event(AUTH_CHANGE_EVENT));
       }
+      return;
     }
+
+    localStorage.setItem(AUTH_STORAGE_KEY, "true");
+    window.dispatchEvent(new Event(AUTH_CHANGE_EVENT));
   };
 
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.logo} aria-label="meshitaku ホーム">
-        <span className={styles.logo__mark}>m</span>
-        <span className={styles.logo__name}>meshitaku<span>.</span></span>
+        <span className={styles.logo__name}>meshitaku</span>
       </Link>
 
       <nav className={styles.nav} aria-label="メインナビゲーション">
-        <Link href="#hero-title" className={styles.nav__link_active}>ホーム</Link>
-        <Link href="#feature-title">できること</Link>
-        <Link href="#mood-title">気分から探す</Link>
-        <Link href="#recipes">レシピ</Link>
+        <Link href="#hero-title" className={styles.nav__text}>ホーム</Link>
+        <Link href="#feature-title" className={styles.nav__text}>できること</Link>
+        <Link href="#mood-title" className={styles.nav__text}>気分から探す</Link>
+        <Link href="#recipes" className={styles.nav__text}>レシピ</Link>
       </nav>
 
       <div className={styles.actions}>
@@ -55,9 +58,9 @@ function Header() {
             </button>
           </>
         ) : (
-          <Link href="/login" className={`${styles.auth__button} ${styles.auth__button_login}`}>
+          <button type="button" onClick={handleAuthClick} className={`${styles.auth__button} ${styles.auth__button_login}`}>
             ログイン <span aria-hidden="true">↗</span>
-          </Link>
+          </button>
         )}
       </div>
     </header>
