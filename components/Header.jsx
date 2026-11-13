@@ -43,10 +43,9 @@ function Header() {
       </Link>
 
       <nav className={styles.nav} aria-label="メインナビゲーション">
-        <Link href="#hero-title" className={styles.nav__text}>ホーム</Link>
-        <Link href="#feature-title" className={styles.nav__text}>できること</Link>
-        <Link href="#mood-title" className={styles.nav__text}>気分から探す</Link>
-        <Link href="#recipes" className={styles.nav__text}>レシピ</Link>
+        <Link href="/#home" className={styles.nav__text}>ホーム</Link>
+        <Link href="/#feature" className={styles.nav__text}>できること</Link>
+        <Link href="/#question" className={styles.nav__text}>よくある質問</Link>
       </nav>
 
       <div className={styles.actions}>

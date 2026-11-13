@@ -16,6 +16,11 @@
   box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 140px;
+}
+
 body {
     font-family:  "Noto Sans JP", sans-serif;
     background-color: var(--background-main);
