@@ -1,41 +1,7 @@
-"use client";
-
-import { useSyncExternalStore } from "react";
 import Link from "next/link";
 import styles from "./Header.module.css";
 
-const AUTH_STORAGE_KEY = "meshitaku-authenticated";
-const AUTH_CHANGE_EVENT = "meshitaku-auth-change";
-
-const subscribeToAuth = (callback) => {
-  window.addEventListener(AUTH_CHANGE_EVENT, callback);
-  return () => window.removeEventListener(AUTH_CHANGE_EVENT, callback);
-};
-
-const getAuthSnapshot = () => localStorage.getItem(AUTH_STORAGE_KEY) === "true";
-const getServerAuthSnapshot = () => false;
-
 function Header() {
-  const isLoggedIn = useSyncExternalStore(
-    subscribeToAuth,
-    getAuthSnapshot,
-    getServerAuthSnapshot,
-  );
-
-  const handleAuthClick = () => {
-    if (isLoggedIn) {
-      const confirmLogout = window.confirm("ログアウト");
-      if (confirmLogout) {
-        localStorage.removeItem(AUTH_STORAGE_KEY);
-        window.dispatchEvent(new Event(AUTH_CHANGE_EVENT));
-      }
-      return;
-    }
-
-    localStorage.setItem(AUTH_STORAGE_KEY, "true");
-    window.dispatchEvent(new Event(AUTH_CHANGE_EVENT));
-  };
-
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.logo} aria-label="meshitaku ホーム">
@@ -43,24 +9,15 @@ function Header() {
       </Link>
 
       <nav className={styles.nav} aria-label="メインナビゲーション">
-        <Link href="/#home" className={styles.nav__text}>ホーム</Link>
-        <Link href="/#feature" className={styles.nav__text}>できること</Link>
-        <Link href="/#question" className={styles.nav__text}>よくある質問</Link>
+        <a href="#home" className={styles.nav__text}>ホーム</a>
+        <a href="#feature" className={styles.nav__text}>できること</a>
+        <a href="#question" className={styles.nav__text}>よくある質問</a>
       </nav>
 
       <div className={styles.actions}>
-        {isLoggedIn ? (
-          <>
-            <Link href="/mypage" className={styles.auth__button}>マイページ</Link>
-            <button onClick={handleAuthClick} className={`${styles.auth__button} ${styles.auth__button_logout}`}>
-              ログアウト <span aria-hidden="true">←</span>
-            </button>
-          </>
-        ) : (
-          <button type="button" onClick={handleAuthClick} className={`${styles.auth__button} ${styles.auth__button_login}`}>
-            ログイン <span aria-hidden="true">↗</span>
-          </button>
-        )}
+        <Link href="/login" className={styles.auth__button}>
+          使ってみる <span aria-hidden="true">→</span>
+        </Link>
       </div>
     </header>
   );
