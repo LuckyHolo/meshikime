@@ -1,0 +1,129 @@
+/* 画面全体（キユーピー風の温かみあるアイボリー背景） */
+.memo__wrapper {
+  min-height: 100vh;
+  padding: 60px 20px;
+}
+
+/* カードの外・左上のタイトルエリア */
+.memo__title {
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto 24px;
+}
+
+.memo__title h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 8px;
+}
+
+.memo__title p {
+  font-size: 14px;
+  color: #6b665e;
+  margin: 0;
+}
+
+/* 中央に浮かぶ白いメインカード */
+.memo__main {
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--background-main);
+  border: 1px solid #e8e4dc;
+  border-radius: 1.2rem;
+  padding: 40px;
+}
+
+/* 1. 入力フォーム */
+.memo__form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.form__text {
+  flex: 1;
+  padding: 14px 16px;
+  font-size: 15px;
+  background-color: #faf8f5;
+  border: 1px solid #e8e4dc;
+  border-radius: 1.2rem;
+  outline: none;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form__text:focus {
+  border-color: var(--accent-color);
+  background-color: var(--background-main);
+}
+
+.form__button {
+  background-color: var(--accent-color);
+  color: var(--button-text);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 1.2rem;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.form__button:hover {
+  opacity: 0.85;
+}
+
+/* 2. 一覧表示 */
+.list__section {
+  border-top: 1px solid #f0ede6;
+  padding-top: 32px;
+}
+
+.list__heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 16px;
+}
+
+.memo__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 8px;
+  border-bottom: 1px solid #f0ede6;
+}
+
+.list__item:last-child {
+  border-bottom: none;
+}
+
+.list__text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.list__delete {
+  background: transparent;
+  border: 1px solid #e8e4dc;
+  color: #8c857b;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 0.8rem;
+  transition: all 0.2s;
+}
+
+.list__delete:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+  background-color: #fef2f2;
+}
