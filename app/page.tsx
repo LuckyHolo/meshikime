@@ -8,7 +8,7 @@ import styles from "@/app/page.module.css";
 
 export default function Home() {
   return (
-    <>
+    <div id="home">
       <Header />
       <main className={styles.main__wrapper}>
         {/* 1. HERO SECTION */}
@@ -18,7 +18,7 @@ export default function Home() {
               もう「何食べよう？」で<br />迷わない。
             </h1>
             <p className={styles.hero__lead}>
-              毎日の献立選びや、お店探しのストレスをすべてゼロに。meshitakuは、あなたの今の気分や現在地、冷蔵庫の残り物に合わせて、AIが「今日食べるべき一食」をスパッと決めるサービスです。
+              毎日の献立選びや、お店探しのストレスをすべてゼロに。<br />meshitakuは、あなたの今の気分や現在地、冷蔵庫の残り物に合わせて、<br />AIが「今日食べるべき一食」をスパッと決めるサービスです。
             </p>
             <div className={styles.hero__actions}>
               <Link href="/login" className={styles.button__primary}>
@@ -39,6 +39,6 @@ export default function Home() {
 
         <Footer />
       </main>
-    </>
+    </div>
   );
 }

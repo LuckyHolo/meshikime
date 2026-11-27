@@ -2,7 +2,7 @@ import styles from './QuestionAnser.module.css'
 
 function QuestionAnser() {
   return (
-    <section className={styles.faq__section} aria-labelledby="faq-title-text">
+    <section className={styles.faq__section} aria-labelledby="faq-title-text" id='question'>
             <div className={styles.section__back}>
             <h2 id="faq-title-text" className={styles.section__title}>よくあるご質問</h2>
           <div className={styles.faq__list}>

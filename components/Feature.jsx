@@ -2,8 +2,8 @@ import styles from './Feature.module.css'
 
 function Feature() {
     return (
-        <div>
-            <section className={styles.feature__section} id="recipes" aria-labelledby="recipe-detail-title">
+        <div id="feature">
+            <section className={styles.feature__section} aria-labelledby="recipe-detail-title">
                 <div className={styles.feature__title}>
                     <h2>meshitakuでできること。</h2>
                 </div>

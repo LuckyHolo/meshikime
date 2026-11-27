@@ -4,48 +4,61 @@
     z-index: 1000;
     width: 100%;
     background-color: var(--background-main);
-    padding: 50px;
+    /* ★上下は24px（スッキリ高さ）、左右は「画面幅から1080pxを引いた半分」の余白を自動で確保 */
+    padding: 24px max(24px, calc((100% - 1080px) / 2));
     align-items: center;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    border-bottom: 1px solid #e2e8e4; /* 下に極細の線を入れるとスクロール時に見やすい */
 }
 
 .logo {
     text-decoration: none;
+    font-size: 22px;
+    font-weight: 900;
 }
+
 .logo span {
-    color: #e4553f;
+    color: var(--accent-color); /* ブランドカラーのグリーンに統一 */
 }
+
 .nav {
     display: flex;
     gap: 34px;
 }
 
+.nav__text {
+    font-size: 14px;
+    font-weight: 600;
+}
+
 .nav__text:hover {
     color: var(--accent-text);
 }
+
 .actions {
     align-items: center;
     display: flex;
     gap: 9px;
 }
+
 .auth__button {
-    background: transparent;
+    background-color: var(--accent-color);
+    color: var(--button-text);
     border: 1px solid var(--accent-color);
     border-radius: 99px;
     cursor: pointer;
     font-size: 13px;
-    padding: 11px 16px;
+    font-weight: 700;
+    padding: 11px 22px;
     text-decoration: none;
+    transition: all 0.2s ease;
 }
+
 .auth__button:hover {
-    color: var(--hover-text);
-    background-color: var(--accent-color);
+    opacity: 0.85;
 }
+
 .auth__button span {
     margin-left: 5px;
-}
-.auth__button_logout {
-   font-size: 13px;
 }
