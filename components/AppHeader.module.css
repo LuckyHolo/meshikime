@@ -1,0 +1,71 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: var(--background-main);
+  /* LPのヘッダーと左右の開始位置を揃える */
+  padding: 20px max(24px, calc((100% - 1080px) / 2));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e8e4dc;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.logo__name {
+  color: var(--accent-color);
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav__text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav__text:hover {
+  color: var(--accent-text);
+}
+
+/* 現在開いているページのアクティブ表示 */
+.nav__active {
+  color: var(--accent-text);
+  border-bottom-color: var(--accent-color);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.logout__button {
+  background: transparent;
+  border: 1px solid #e8e4dc;
+  color: #6b665e;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.logout__button:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+  background-color: #fef2f2;
+}
